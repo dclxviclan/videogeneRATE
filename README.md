@@ -6,6 +6,7 @@
 ![](https://github.com/dclxviclan/videogeneRATE/blob/main/Screenshot_20230929-190310_Video%20Player.jpg)
 
 **NVIDIA GPU**
+**[Run Command in GoogleColab]**
 ```
 import subprocess, os, sys
 sub_p_res = subprocess.run(['nvidia-smi', '--query-gpu=name,memory.total,memory.free', '--format=csv,noheader'], stdout=subprocess.PIPE).stdout.decode('utf-8')
@@ -13,6 +14,7 @@ print(f"{sub_p_res[:-1]}")
 ```
 
 **Enviroment Setup**
+**[Run Command in GoogleColab]**
 ```
 import subprocess, time, gc, os, sys
 
@@ -63,7 +65,7 @@ from helpers.prompts import Prompts
 ```
 
 **Path Setup**
-**[]**
+**[Run Command in GoogleColab]**
 ```
 
 def PathSetup():

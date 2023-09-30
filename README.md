@@ -5,7 +5,8 @@
 ![](https://github.com/dclxviclan/videogeneRATE/blob/main/Screenshot_20230929-190224_Video%20trimmer.jpg)
 ![](https://github.com/dclxviclan/videogeneRATE/blob/main/Screenshot_20230929-190310_Video%20Player.jpg)
 
-#@markdown **Environment Setup**
+**Enviroment Setup**
+```
 import subprocess, time, gc, os, sys
 
 def setup_environment():
@@ -52,3 +53,4 @@ from helpers.render import render_animation, render_input_video, render_image_ba
 from helpers.model_load import make_linear_decode, load_model, get_model_output_paths
 from helpers.aesthetics import load_aesthetics_model
 from helpers.prompts import Prompts
+```

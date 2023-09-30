@@ -7,6 +7,9 @@
 
 **Open the repository file and execute all cells**
 
+**[>]**
+
+
 **NVIDIA GPU**
 **[Run in GoogleColab]**
 ```
@@ -14,6 +17,11 @@ import subprocess, os, sys
 sub_p_res = subprocess.run(['nvidia-smi', '--query-gpu=name,memory.total,memory.free', '--format=csv,noheader'], stdout=subprocess.PIPE).stdout.decode('utf-8')
 print(f"{sub_p_res[:-1]}")
 ```
+
+
+**[>]**
+
+
 
 **Enviroment Setup**
 **[Run in GoogleColab]**
@@ -66,6 +74,11 @@ from helpers.aesthetics import load_aesthetics_model
 from helpers.prompts import Prompts
 ```
 
+**[>]**
+
+
+
+
 **Path Setup**
 **[Run in GoogleColab]**
 ```
@@ -82,6 +95,10 @@ def PathSetup():
 root = SimpleNamespace(**PathSetup())
 root.models_path, root.output_path = get_model_output_paths(root)
 ```
+**[>]**
+
+
+
 
 **Model Setup**
 **[Run in GoogleColab]**
@@ -101,3 +118,5 @@ root.model, root.device = load_model(root, load_on_run_all=True, check_sha256=Tr
 **then configure your engine according to your preferences, good luck!**
 
 
+
+**[666>=]**

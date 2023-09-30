@@ -5,6 +5,13 @@
 ![](https://github.com/dclxviclan/videogeneRATE/blob/main/Screenshot_20230929-190224_Video%20trimmer.jpg)
 ![](https://github.com/dclxviclan/videogeneRATE/blob/main/Screenshot_20230929-190310_Video%20Player.jpg)
 
+**NVIDIA GPU**
+```
+import subprocess, os, sys
+sub_p_res = subprocess.run(['nvidia-smi', '--query-gpu=name,memory.total,memory.free', '--format=csv,noheader'], stdout=subprocess.PIPE).stdout.decode('utf-8')
+print(f"{sub_p_res[:-1]}")
+```
+
 **Enviroment Setup**
 ```
 import subprocess, time, gc, os, sys
@@ -53,4 +60,21 @@ from helpers.render import render_animation, render_input_video, render_image_ba
 from helpers.model_load import make_linear_decode, load_model, get_model_output_paths
 from helpers.aesthetics import load_aesthetics_model
 from helpers.prompts import Prompts
+```
+
+**Path Setup**
+**[]**
+```
+
+def PathSetup():
+    models_path = "models" #@param {type:"string"}
+    configs_path = "configs" #@param {type:"string"}
+    output_path = "outputs" #@param {type:"string"}
+    mount_google_drive = True #@param {type:"boolean"}
+    models_path_gdrive = "/content/drive/MyDrive/AI/models" #@param {type:"string"}
+    output_path_gdrive = "/content/drive/MyDrive/AI/StableDiffusion" #@param {type:"string"}
+    return locals()
+
+root = SimpleNamespace(**PathSetup())
+root.models_path, root.output_path = get_model_output_paths(root)
 ```
